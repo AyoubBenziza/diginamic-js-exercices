@@ -1,7 +1,7 @@
 class CustomString extends String {
   split(char) {
-    let array = super.split(char);
-    return array.map((element) => (element += char));
+    const change = this.replaceAll(char, `${char},dxf`);
+    return change.split(",dxf");
   }
 }
 
