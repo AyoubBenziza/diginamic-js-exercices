@@ -34,15 +34,15 @@ class Tandem extends Bike {
     super(brand, model, weight);
   }
   pedal() {
-    console.log("Nous sommes 2 à pédaler");
+    console.log(`Nous sommes ${Tandem.seat_number} à pédaler`);
   }
 }
 
-const red = new Bike("GoSport", "Neon", "15kg");
+const red = new Bike("GoSport", "Neon", 15);
 console.log("Nom de modèle du bike Red avant setter", red.model);
 red.model = "Flash";
 console.log("Nom de modèle du bike Red après setter", red.model);
 red.pedal();
 
-const blue = new Tandem("Decathlon", "Love", "25kg");
+const blue = new Tandem("Decathlon", "Love", 25);
 blue.pedal();
