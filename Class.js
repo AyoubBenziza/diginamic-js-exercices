@@ -1,4 +1,54 @@
+//----------------------------- Class ---------------------------------//
+
+// Classe Animal
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  eat() {
+    console.log(`${this.name} mange`);
+  }
+}
+
+// Classe Chien hérité de la classe Animal
+class Dog extends Animal {
+  constructor(name, job) {
+    super(name);
+    this.job = job;
+  }
+
+  woof() {
+    console.log(`${this.name} dit: Woof, je suis un ${this.job}`);
+  }
+}
+
+class AllergicDog extends Dog {
+  constructor(name, job, allergy) {
+    super(name, job);
+    this.allergy = allergy;
+  }
+
+  eat() {
+    console.log(`${this.name} mange mais pas de ${this.allergy}`);
+  }
+}
+
+// Instances de classes
+const doggy = new Dog("Doggy", "chien de garde");
+const rufus = new Dog("Rufus", "chien de berger");
+const nash = new AllergicDog("Nash", "chien de maison", "lait");
+
+// Appel de méthodes d'une instance de classe
+doggy.woof();
+rufus.eat();
+nash.eat();
+
+console.log("Doggy", doggy);
+
+// Classe Utilisateur
 class User {
+  // Propriété privée avec # devant
   #name;
   #role;
   constructor(name, role) {
@@ -6,10 +56,12 @@ class User {
     this.#role = role;
   }
 
+  // Getter: méthode pour récupérer une propriété privée
   get name() {
     return this.#name;
   }
 
+  // Setter: méthode pour configurer une propriété privée
   set name(new_name) {
     this.#name = new_name;
   }
@@ -34,6 +86,7 @@ console.log("Nom après le setter", bob.name);
  * price : propriété privée accessible de l'extérieur de la classe que par un getter ou un setter
  */
 class Product {
+  // Propriété statique, accessible en appelant par la classe
   static brand = "Diginamic";
 
   #name;
@@ -53,6 +106,7 @@ class Product {
   }
 
   get price() {
+    // Selon notre condition, on effectue une ristourne sur le prix
     if (bob.role === "plombier") {
       return this.#price * 0.9;
     }
