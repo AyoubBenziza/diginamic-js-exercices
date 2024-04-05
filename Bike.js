@@ -30,9 +30,6 @@ class Bike {
 
 class Tandem extends Bike {
   static seat_number = 2;
-  constructor(brand, model, weight) {
-    super(brand, model, weight);
-  }
   pedal() {
     console.log(`Nous sommes ${Tandem.seat_number} à pédaler`);
   }
